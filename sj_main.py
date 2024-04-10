@@ -7,6 +7,16 @@ def encoder(pw):
         encoded_pw += encoded_digit
     return encoded_pw
 
+#Decode function
+def decode(password):
+    decoded_pw = ""
+    for i in password:
+        decode_new = int(i) - 3
+        decoded_pw += str(decode_new)
+
+    return decoded_pw
+
+
 def menu():
     print("Menu\n"
           "-------------\n"
@@ -24,7 +34,8 @@ def main():
                 encoded_password = encoder(password)
                 print("Your password has been encoded and stored!\n")
             elif option == 2:
-                pass
+                print(f"The encoded password is {encoder(password)}, and the original password is {decode(encoder(password))}.\n")
+
             elif option == 3:
                 exit()
         except ValueError:
