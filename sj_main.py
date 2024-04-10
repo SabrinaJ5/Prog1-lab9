@@ -3,7 +3,7 @@
 def encoder(pw):
     encoded_pw = ''
     for num in pw:
-        encoded_digit = str((int(num) + 3) % 10)  # Shifting each digit up by 3
+        encoded_digit = str(int(num) + 3)  # Shifting each digit up by 3
         encoded_pw += encoded_digit
     return encoded_pw
 
@@ -21,7 +21,7 @@ def main():
         if option == 1:
             password = input("Please enter your password to encode: ")
             encoded_password = encoder(password)
-            print(f"{password} >> {encoded_password}") # DELETE LATER
+            print("Your password has been encoded and stored!")
         elif option == 2:
             pass
         elif option == 3:
